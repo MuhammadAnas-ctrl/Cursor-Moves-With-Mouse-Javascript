@@ -1,0 +1,149 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #fff;
+}
+.loader{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f7f9fb;
+    transition:  opacity 1s , visibility 2s;
+}
+.loader-hidden{
+    opacity: 0;
+    visibility: hidden;
+}
+.loader::after{
+    content: "";
+    width: 85px;
+    height: 85px;
+    border:  15px solid #dddddd;
+    border-top-color: #9900ff;
+    border-radius: 50%;
+    animation: loading 2s ease infinite;
+}
+@keyframes loading{
+    from{
+        transform:  rotate(0turn);
+    }
+    to{
+        transform: rotate(1turn);
+    }
+}
+html , body{
+    height: 100%;
+    width: 100%;
+}
+#main{
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0, 0, 0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+}
+.cursor{
+    height: 40px;
+    width: 40px;
+    background-color: #ffd900;
+    border-radius: 50%;
+    position: absolute;
+    transition: all linear 0.7s;
+    mix-blend-mode: difference;
+    animation: colorchange 2.5s linear infinite;
+
+}
+p{
+    position: absolute;
+    top: 600px;
+    left: 500px;
+    font-size: 35px;
+}
+@keyframes colorchange{
+    5%{
+        background-color: cornflowerblue;
+    }
+    15%{
+        background-color: #00ff22;
+    }
+    25%{
+        background-color: #ff4800;
+    }
+    35%{
+        background-color: rgb(4, 0, 255);
+    }
+    45%{
+        background-color: cadetblue;
+    }
+    55%{
+        background-color: blueviolet;
+    }
+    65%{
+        background-color: deeppink;
+    }
+    75%{
+        background-color: #00d9ff;
+    }
+    85%{
+        background-color: antiquewhite;
+    }
+    95%{
+        background-color: crimson;
+    }
+    100%{
+        background-color: #00ff22;
+    }
+}
+h1{
+    font-size: 10vw;
+    font-weight: bold;
+    margin-left: 50px;
+}
+p{
+    color: red;
+}
+@media (max-width: 700px){
+    h1{
+        position: relative;
+        left: -10px;
+        bottom: 150px;
+        font-size: 20vw;
+
+    }
+    p{
+    position: absolute;
+    left: 30px;
+    top: 450px;
+    color: tomato;
+    font-size: 45px;
+}
+
+    .cursor{
+        mix-blend-mode: difference;
+
+        
+    }
+}
+@media (max-width: 500px){
+    h1{
+        font-size: 20vw;
+    }
+    p{
+        position: absolute;
+        left: 30px;
+        top: 450px;
+        color: tomato;
+        font-size: 45px;
+
+    }
+
+}
